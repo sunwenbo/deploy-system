@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block loading %}
+    <script type="text/javascript"> group_list_all(); </script>
+    <script type="text/javascript"> environment_list_all(); </script>
+    <script type="text/javascript"> codetype_list_all(); </script>
+    <script type="text/javascript"> push_codetypemanage(); </script>
+    <script type="text/javascript"> push_k8smanage(); </script>
+{% endblock %}
+
+
+{% block page_content %}
+
+    <ol class="breadcrumb">
+        <li><a href="/index">Home</a></li>
+        <li class="active">项目管理</li>
+    </ol>
+
+    <div style="height:auto;border:1px solid #ccc;padding-left:10px;" id="managelist">
+    </div>
+    <br>
+    <br>
+
+    <div class="projectinfo" style="height:auto;border:1px solid #ccc;padding-left:10px;">
+        <table class="table table-hover">
+            <tr>
+                <td><li class="active">项目组管理</li></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="addgroupname" placeholder="groupName" class="form-control"  value=""></td>
+                <td><button id="add_newgroup" class="btn btn-small btn-success">添加新服务组</button></td>
+                <td><div id="groupnamediv" class="sidebar-menu"><input type="text" id="selectgroup" class="form-control" value=""></div></td>
+                <td><button id="del_group" class="btn btn-small btn-danger">删除空服务组</button></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td><li class="active">环境管理</li></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="addenvironmentname" placeholder="environmentName" class="form-control"  value=""></td>
+                <td><button id="add_newenvironment" class="btn btn-small btn-success">添加新环境</button></td>
+                <td><div id="environmentnamediv" class="sidebar-menu"><input type="text" id="selectenvironment" class="form-control" value=""></div></td>
+                <td><button id="del_environment" class="btn btn-small btn-danger">删除空环境</button></td>
+            </tr>
+            <tr>
+                <td><li class="active">代码类型管理</li></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="addcodetypename" placeholder="codetypeName" class="form-control"  value=""></td>
+                <td><button id="add_newcodetype" class="btn btn-small btn-success">添加新代码类型</button></td>
+                <td><div id="codetypenamediv" class="sidebar-menu"><input type="text" id="selectcodetype" class="form-control" value=""></div></td>
+                <td><button id="del_codetype" class="btn btn-small btn-danger">删除空代码类型</button></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+
+    <div class="codetypemanage" style="height:auto;border:1px solid #ccc;padding-left:10px;">
+        <li class="active">代码类型模板管理</li>
+        <br>
+        <div style="" id="codetypemanage_button_div">
+        </div>
+        <br>
+        <br>
+        <div style="" id="templatefile_list_button_div" status="close">
+        </div>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+
+
+    <div class="k8smanage" style="height:auto;border:1px solid #ccc;padding-left:10px;">
+        <li class="active">k8s管理</li>
+        <div style="" id="k8smanage_button_div">
+        </div>
+        <br>
+        <br>
+        <div style="" id="k8smanage_list_button_div" status="close">
+        </div>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+
+
+{% endblock %}
+
+

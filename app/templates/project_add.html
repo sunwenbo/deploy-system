@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block loading %}
+    <script type="text/javascript"> group_list_all(); </script>
+    <script type="text/javascript"> push_add_project_table(); </script>
+{% endblock %}
+
+
+{% block page_content %}
+
+    <ol class="breadcrumb">
+        <li><a href="/index">Home</a></li>
+        <li class="active">添加项目</li>
+    </ol>
+
+    <div class="projectinfo" style="height:auto;border:1px solid #ccc;padding-left:10px;">
+        <li class="active">添加新项目</li>
+        <div style="float:right" id="project_button_div">
+        </div>
+        <div class="add_project_div" id="project_div"  status="close"></div>
+        <br>
+        <br>
+    </div>
+
+{% endblock %}
+
+

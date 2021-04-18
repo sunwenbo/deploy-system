@@ -1,0 +1,20 @@
+
+# deploy docker service_check
+* * * * * cd /home/bae/deploy/app/hostscheck/;  python service_check.py
+
+# falcon dingding dd
+* * * * * /usr/bin/python /home/bae/deploy/app/hostscheck/falcon_ding.py >>/home/bae/logs/falcon_ding.log 2>&1
+
+# APP_ENV dingding dd
+* * * * * /usr/bin/python /home/bae/deploy/app/hostscheck/env_alarm.py >>/home/bae/logs/env_alarm.log 2>&1
+
+# redis_queue_check dingding dd
+* * * * * /usr/bin/python /home/bae/deploy/app/hostscheck/redis_queue_check.py >>/home/bae/logs/redis_queue_check.log 2>&1
+# push redis queue check
+* * * * * /usr/bin/python /home/bae/deploy/app/hostscheck/redis_push_queue_check.py >>/home/bae/logs/redis_push_queue_check.log 2>&1
+# ta redis queue check
+* * * * * /usr/bin/python /home/bae/deploy/app/hostscheck/redis_ta_queue_check.py >>/home/bae/logs/redis_ta_queue_check.log 2>&1
+# check_es_exception
+*/5 * * * * /usr/bin/python /home/bae/deploy/app/hostscheck/check_es_exception.py >>/home/bae/logs/check_es_exception.log 2>&1
+# check_5xx
+*/5 * * * * /usr/bin/python /home/bae/deploy/app/hostscheck/check_5xx.py >>/home/bae/logs/check_5xx.log 2>&1
